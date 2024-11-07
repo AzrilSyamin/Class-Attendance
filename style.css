@@ -8,10 +8,26 @@
     text-decoration: none;
 }
 
-body{
-    background-color: #a4a4a4;
+:root{
+    --bg-color:#a4a4a4;
+    --primary:hsl(109, 100%, 28%);
+    --primary-light:hsl(109, 100%, 70%);
+    --second:hsl(325, 100%, 28%);
+    --second-light: hsl(325, 100%, 70%);
+    --semi-white:aliceblue;
+    --semi-gray:#eaeaea;
+    --dark:black;
 }
 
+.isActive{
+    background-color: var(--second) !important;
+}
+
+body{
+    background-color:var(--bg-color) ;
+}
+
+/* FORM  */
 .form {
     width: 80%;
     margin: auto;
@@ -21,7 +37,8 @@ body{
 
 .form h1 {
     margin-top: 2rem;
-    text-shadow: 2px 2px 3px white;
+    text-shadow: 2px 2px 2px var(--semi-white);
+    font-size: 2rem;;
 }
 
 .form p{
@@ -46,9 +63,9 @@ body{
     border-radius: 5px;
     box-shadow: 3px 3px 8px -3px;
     width: 300px;
-    background-color: #1a8d00;
-    color: aliceblue;
-    text-shadow: 3px 3px 3px black;
+    background-color: var(--primary);
+    color: var(--semi-white);
+    text-shadow: 3px 3px 3px var(--dark);
     transition: all 1s;
 }
 .form .checkboxItem:hover{
@@ -74,11 +91,10 @@ body{
     width: 100%;
 }
 
-
 .form > button{
-    background-color: #8d0052;
+    background-color: var(--second);
     padding: 15px;
-    color: aliceblue;
+    color: var(--semi-white);
     border: none;
     border-radius: 10px;
     margin: 2rem 0;
@@ -89,10 +105,10 @@ body{
 }
 
 .form > button:hover{
-    background-color: rgb(127, 255, 168);
+    background-color: var(--primary-light);
     width: 100%;
-    color: #8d0052;
-    border: 3px solid #8d0052;
+    color: var(--second);
+    border: 3px solid var(--second);
 }
 
 
@@ -104,25 +120,28 @@ body{
 .display h3{
     padding: 5px 0;
     font-size: 2rem;
-    color: #1a8d00;
+    color: var(--primary);
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 3px black;
+    text-shadow: 2px 2px 2px var(--dark);
     text-align: center;
     margin-top: 2rem;
 }
 
 .display button{
-    background-color: #8d0052;
-    color: aliceblue;
+    background-color: var(--second);
+    color: var(--semi-white);
     padding: 10px 15px;
     margin-bottom: 2rem;
     border-radius: .3rem;
     transition: all .8s;
+    border: none;
+    box-shadow: .3rem .3rem .5rem -.3rem var(--dark);
 }
 
 .display button:hover{
-    background-color: orangered;
+    background-color: var(--second-light);
     padding: 12px;
+    color: var(--dark);
 }
 
 .display #attendanceResults{
@@ -141,7 +160,7 @@ body{
 
 .display .dlist{
     text-align: left;
-    background-color: #eaeaea;
+    background-color: var(--semi-gray);
     width: 500px;
     padding: 1.4rem;
     border-radius: .5rem;
@@ -149,7 +168,7 @@ body{
 }
 
 .display .dlist li{
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid var(--dark);
     padding: 4px 0;
 }
 

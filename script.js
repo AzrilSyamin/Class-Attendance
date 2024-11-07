@@ -54,10 +54,10 @@ function toggleInput(checkbox) {
     
     // Jika checkbox dicentang, tunjukkan input sebab
     if (checkbox.checked) {
-        parent.style.backgroundColor ="#8d0052";
+        parent.classList.add("isActive");
         sebabInput.style.display = "block";
     } else {
-        parent.style.backgroundColor="#1a8d00";
+        parent.classList.remove("isActive");
         sebabInput.style.display = "none";
     }
 }
