@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>class attendance</title>
+</head>
+<body>
+
+    <section class="form">
+        <h1 style="font-size: 30px;">Class Attendance Computer System 4B</h1>
+        <p>Please tick the name of the student who is absent, along with the reason (if applicable).</p>
+        <div id="attendanceForm">
+             <!-- Checkboxes will be dynamically added here -->
+        </div>    
+        <button type="button" onclick="checkAttendance()">Submit</button>
+    </section>
+
+    <section class="display" style="display: none;">
+        <h3>ATTENDANCE STATUS</h3>
+        <button id="refresh">Refresh</button>
+        <div id="attendanceResults">
+            <!-- The lists will be displayed here after clicking submit -->
+        </div>
+    </section>
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>
+
