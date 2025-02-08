@@ -1,0 +1,147 @@
+.container-fluid{
+  padding-left: 0;
+  padding-right: 0;
+}
+/* HEADER  */
+.header{
+  padding: 40px 0 80px 0; 
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+/* COUNTER  */
+.row-counter .counter-box{
+  position: relative;
+  top: -70px;
+  background-color: white;
+  border-radius: 3px;
+  width: 30%;
+}
+.row-counter h2{
+  font-size: 2.5rem;
+}
+
+/* TEXT DESCRIPTION  */
+.text-description {
+  margin-bottom: 100px;
+}
+.text-description .description{
+  /* text-align: center;
+  padding: 20px; */
+  font-size: 1.2rem;
+  position: absolute;
+  top: -50px;
+}
+
+/* TABLE  */
+@media screen and (min-width:800px) {
+  .my-table{
+    width: 800px !important;
+    overflow-x: scroll;
+    margin: auto;
+  }
+  .confirm-btn{
+    margin: auto;
+    width: 600px;
+  }
+  .confirm-btn button{
+    width: 100% !important;
+  }
+  .row-counter .counter-box{
+    width: 200px;
+  }
+}
+@media screen and (max-width:600px) {
+}
+.my-table{
+  width: 100%;
+}
+.my-table th{
+  color: #2476d4;
+}
+.my-table th:nth-child(2){
+  width: 30%;
+}
+
+/* CUSTOM SWITCH  */
+.custom-switch-box {
+  position: relative;
+  display: inline-block;
+  width: 114px;
+  height: 40px; 
+}
+
+.custom-switch input {
+  display: none;
+}
+
+.slider {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border: 2px solid green;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: green;
+  transition: all 0.3s ease;
+}
+
+.slider .circle {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: green;
+  transition: all 0.3s ease;
+}
+
+.text {
+  flex: 1;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.custom-switch input:not(:checked)+.slider {
+  border-color: green;
+}
+
+.custom-switch input:not(:checked)+.slider .circle {
+  left: 5px;
+  background-color: green;
+}
+
+.custom-switch input:not(:checked)+.slider .text {
+  color: green;
+  margin-left: 40px;
+}
+
+.custom-switch input:checked+.slider {
+  border-color: red;
+}
+
+.custom-switch input:checked+.slider .circle {
+  left: calc(100% - 35px);
+  background-color: red;
+}
+
+.custom-switch input:checked+.slider .text {
+  color: red;
+  margin-right: 40px;
+  margin-left: 0;
+}
+
+.custom-switch input:not(:checked)+.slider .text::before {
+  content: "Present";
+}
+
+.custom-switch input:checked+.slider .text::before {
+  content: "Absent";
+}
