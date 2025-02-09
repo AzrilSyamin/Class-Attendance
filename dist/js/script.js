@@ -114,12 +114,12 @@ window.onload = async function () {
             }
             present.innerText = count.present;
             absent.innerText = count.absent;
-            presentData = students.filter(user => !absentData.includes(user.toUpperCase()));
+            presentData = students.filter(user => !absentData.some(absent=>absent.name.toUpperCase() === user.toUpperCase()));
         });
     });
     present.innerText = count.present;
     absent.innerText = count.absent;
-    presentData = students.filter(user => !absentData.includes(user.toUpperCase()));
+    presentData = students.filter(user => !absentData.some(absent => absent.name.toUpperCase() === user.toUpperCase()));
 
     // getAbsentData on submit
     const confirm = document.getElementById("confirm");
@@ -179,10 +179,10 @@ function checkAttendance() {
         btnAbsent.textContent = "Copy To Clipboard!"
         absentList.appendChild(btnAbsent);
 
-        absentData.forEach(function (user) {
+        absentData.forEach(function (user,index) {
             let li = document.createElement('li');
             li.classList.add("list-group-item")
-            li.innerHTML = `${user.name} <b>(${user.reason})</b>`;
+            li.innerHTML = `${index+1}. ${user.name} <b>(${user.reason})</b>`;
             absentList.appendChild(li);
         });
 
@@ -205,10 +205,10 @@ function checkAttendance() {
         btnPresent.textContent = "Copy To Clipboard!"
         presentList.appendChild(btnPresent);
 
-        presentData.forEach(function (name) {
+        presentData.forEach(function (name,index) {
             let li = document.createElement('li');
             li.classList.add("list-group-item")
-            li.textContent = name;
+            li.textContent = `${index+1}. ${name}`;
             presentList.appendChild(li);
         });
 
