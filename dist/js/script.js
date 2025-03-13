@@ -6,7 +6,7 @@ function showLoading(isLoading) {
 async function getData() {
     try {
         showLoading(true);
-        const response = await fetch('https://gist.githubusercontent.com/AzrilSyamin/04e5ead136a1c18201c044ed53b0cc9e/raw/b56f1eef80804332a569988eef47a80be32e1018/students.json');
+        const response = await fetch('https://gist.githubusercontent.com/AzrilSyamin/04e5ead136a1c18201c044ed53b0cc9e/raw/39d6a6b1c15761efc80424f3d0c392da196df812/students.json');
         
         const data = await response.json();
         // set loading 2 second
@@ -114,12 +114,12 @@ window.onload = async function () {
             }
             present.innerText = count.present;
             absent.innerText = count.absent;
-            presentData = students.filter(user => !absentData.some(absent=>absent.name.toUpperCase() === user.toUpperCase()));
+            presentData = students.filter(user => !absentData.some(absent=>absent.name.toUpperCase() === user.toUpperCase())).map(user=>user.toUpperCase());
         });
     });
     present.innerText = count.present;
     absent.innerText = count.absent;
-    presentData = students.filter(user => !absentData.some(absent => absent.name.toUpperCase() === user.toUpperCase()));
+    presentData = students.filter(user => !absentData.some(absent => absent.name.toUpperCase() === user.toUpperCase())).map(user=>user.toUpperCase());
 
     // getAbsentData on submit
     const confirm = document.getElementById("confirm");
@@ -182,7 +182,11 @@ function checkAttendance() {
         absentData.forEach(function (user,index) {
             let li = document.createElement('li');
             li.classList.add("list-group-item")
-            li.innerHTML = `${index+1}. ${user.name} <b>(${user.reason})</b>`;
+            if(user.reason !== "") {
+                li.innerHTML = `${index + 1}. ${user.name} <b>(${user.reason})</b>`;
+            }else{
+                li.innerHTML = `${index + 1}. ${user.name}`;
+            }
             absentList.appendChild(li);
         });
 
